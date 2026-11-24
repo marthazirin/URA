@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TIN Registration Portal</title>
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body>
+
+<header>
+    <img src="ura-logo.png" alt="URA Logo">
+    <h1>TIN Registration Portal</h1>
+</header>
+
+<main>
+
+    <div class="info">
+        Have your National ID ready before starting.
+    </div>
+
+    <div class="options">
+
+        <label>
+            <input type="radio" name="type" checked>
+            Individual Taxpayer
+        </label>
+
+        <label>
+            <input type="radio" name="type">
+            Business Entity
+        </label>
+
+    </div>
+
+    <form>
+
+        <fieldset>
+
+            <legend>Section A: Individual Taxpayer Details</legend>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="nin">NIN</label>
+            <input type="text" id="nin" maxlength="14"
+                   pattern="[A-Z]{2}[A-Z0-9]{12}" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+
+            <label>Gender</label>
+            <div class="gender">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+            </div>
+
+            <label for="district">District</label>
+            <select id="district">
+                <option>Select District</option>
+                <option>Kampala</option>
+                <option>Wakiso</option>
+                <option>Jinja</option>
+                <option>Mbarara</option>
+                <option>Gulu</option>
+            </select>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email">
+
+            <label for="upload">Upload National ID</label>
+            <input type="file" id="upload" accept=".jpg,.jpeg,.pdf">
+
+            <button type="button">Next</button>
+
+        </fieldset>
+
+    </form>
+
+</main>
+
+</body>
+</html>
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+header {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    height: 100px;
+}
+
+.info {
+    background: #FFB81C;
+    color: #003366;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+.options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.options label {
+    background: #003366;
+    color: white;
+    padding: 15px;
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+fieldset {
+    background: white;
+    padding: 25px;
+    border: 1px solid #ccc;
+}
+
+legend {
+    color: #003366;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input:not([type="radio"]):not([type="file"]),
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+}
+
+.gender {
+    display: flex;
+    gap: 20px;
+}
+
+.gender label {
+    display: inline-block;
+}
+
+button {
+    background: #003366;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00509e;
+}
